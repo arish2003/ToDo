@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Arish ToDo - About</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet"> <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #f4f4f4;
@@ -23,7 +23,7 @@
         }
         .hero {
             background-color: #002d72;
-            color: #ffffff; /* Ensure text is visible */
+            color: #ffffff;
             padding: 60px 20px;
             text-align: center;
             border-radius: 0 0 8px 8px;
@@ -32,11 +32,11 @@
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
-            color: #002d72; /* Matching color for the hero heading */
+            color: #002d72;
         }
         .hero p {
             font-size: 1.25rem;
-            color: #333; /* Matching color for the hero paragraph text */
+            color: #002d72;
         }
         .container {
             background-color: #ffffff;
@@ -50,32 +50,32 @@
         }
         .feature {
             margin-bottom: 20px;
-            padding: 20px; /* Add padding inside the box */
-            border-radius: 8px; /* Rounded corners */
-            background: #ffffff; /* White background */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
-            text-align: center; /* Center-align text */
+            padding: 20px;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
             position: relative;
         }
         .feature-icon {
             font-size: 3rem;
             color: #002d72;
-            transition: color 0.3s ease; /* Transition effect for icon color */
+            transition: color 0.3s ease;
         }
         .feature:hover {
-            transform: translateY(-5px); /* Slightly lift the feature box */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         .feature:hover .feature-icon {
-            color: #001c3f; /* Darker color for icon on hover */
+            color: #001c3f;
         }
         .feature h4 {
             color: #002d72;
             margin-bottom: 10px;
         }
         .feature p {
-            color: #333; /* Keep the default text color */
+            color: #333;
         }
         .feature:not(:last-child)::after {
             content: '';
@@ -84,8 +84,8 @@
             right: -10px;
             height: 100%;
             width: 1px;
-            background-color: #002d72; /* Vertical line color */
-            opacity: 0.2; /* Slightly transparent */
+            background-color: #002d72;
+            opacity: 0.2;
         }
         .btn-dark {
             background-color: #002d72;
@@ -110,6 +110,44 @@
             border-left: 5px solid #002d72;
             padding: 10px;
             margin: 20px 0;
+        }
+        .creator-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #eaf4ff 0%, #c2e1ff 100%);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .creator-info .creator-photo {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            object-position: center; /* Center the image */
+            border: 5px solid #002d72;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin-right: 20px;
+        }
+        .creator-info .text-content {
+            flex: 1;
+            margin-left: 20px;
+            border-left: 3px solid #002d72;
+            padding-left: 20px;
+        }
+        .creator-info h3 {
+            color: #002d72;
+            margin-bottom: 15px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .creator-info p {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -143,7 +181,7 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Welcome to Arish ToDo</h1>
+            <h1>Welcome to MyToDo</h1>
             <p>Your go-to application for managing tasks efficiently and staying organized.</p>
         </div>
     </section>
@@ -163,7 +201,7 @@
                     <i class="bi bi-sliders"></i>
                 </div>
                 <h4>Customization</h4>
-                <p>Tailor your task list to fit your needs, with the ability to add, complete, and delete tasks.</p>
+                <p>Tailor your task list to fit your needs, with the ability to add, complete, edit and delete tasks.</p>
             </div>
             <div class="col-md-4 feature">
                 <div class="feature-icon">
@@ -177,6 +215,14 @@
         <div class="highlight">
             <h4>Constant Improvement</h4>
             <p>We are constantly improving and adding new features based on user feedback. If you have any suggestions or questions, please feel free to reach out to us through the <a href="{{ url_for('contact') }}">Contact</a> page.</p>
+        </div>
+
+        <div class="creator-info">
+            <img src="static\arish.jpeg" alt="Creator Photo" class="creator-photo">
+            <div class="text-content">
+                <h3>Arish Manasia</h3>
+                <p>Mr. Manasia is the creator of MyToDo, a task management application designed to help users stay organized and boost productivity. With a passion for design and technology, he has crafted this tool to meet the needs of modern users. Dedicated to continuous improvement, he welcomes feedback and strives to make task management effortless and enjoyable.</p>
+            </div>
         </div>
     </div>
 </body>

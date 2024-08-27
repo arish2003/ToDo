@@ -128,7 +128,7 @@
     </nav>
 
     <div class="container my-3">
-        <h2>Add a ToDo</h2>
+        <h2>Begin Organizing: Add a ToDo</h2>
         <form action="/" method="POST">
             <div class="mb-3">
                 <label for="title" class="form-label">ToDo Title</label>
@@ -165,7 +165,7 @@
                             <th scope="row">{{ loop.index }}</th>
                             <td>{{ todo.title }}</td>
                             <td>{{ todo.desc }}</td>
-                            <td>{{ todo.data_created.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                            <td>{{ todo.data_created.strftime('%A, %B %d, %Y %I:%M %p') }}</td>
                             <td>
                                 {% if todo.completed %}
                                     <form action="{{ url_for('undo', srno=todo.srno) }}" method="POST" style="display:inline;">
@@ -179,6 +179,34 @@
                                 <form action="{{ url_for('delete', srno=todo.srno) }}" method="POST" style="display:inline;">
                                     <button type="submit" class="btn btn-outline-danger btn-sm mx-1">Delete</button>
                                 </form>
+                                <button type="button" class="btn btn-outline-secondary btn-sm mx-1" data-bs-toggle="modal" data-bs-target="#editModal{{ todo.srno }}">Edit</button>
+                                <!-- Edit Modal -->
+                                <div class="modal fade" id="editModal{{ todo.srno }}" tabindex="-1" aria-labelledby="editModalLabel{{ todo.srno }}" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <form action="{{ url_for('edit', srno=todo.srno) }}" method="POST">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="editModalLabel{{ todo.srno }}">Edit ToDo</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="mb-3">
+                                                        <label for="editTitle{{ todo.srno }}" class="form-label">Title</label>
+                                                        <input type="text" class="form-control" id="editTitle{{ todo.srno }}" name="title" value="{{ todo.title }}" required>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="editDesc{{ todo.srno }}" class="form-label">Description</label>
+                                                        <input type="text" class="form-control" id="editDesc{{ todo.srno }}" name="desc" value="{{ todo.desc }}" required>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     {% endfor %}

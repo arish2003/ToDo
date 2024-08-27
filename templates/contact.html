@@ -10,8 +10,8 @@
         body {
             background-color: #f4f4f4;
             color: #333;
-            padding-top: 56px;
-            font-family: 'Arial', sans-serif;
+            margin: 0; /* Remove default body margin */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         .navbar {
             background-color: #002d72;
@@ -25,12 +25,13 @@
         .contact-container {
             background: url('https://via.placeholder.com/1600x800') no-repeat center center fixed;
             background-size: cover;
-            padding: 80px 0;
+            min-height: 100vh; /* Ensure the container covers the full viewport height */
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            padding: 0; /* Remove any padding */
+            margin: 0; /* Remove any margin */
         }
         .contact-form-container {
             background-color: rgba(255, 255, 255, 0.9);
@@ -39,7 +40,8 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             max-width: 700px;
             width: 100%;
-            margin: 0 auto;
+            position: relative; /* Ensure relative positioning */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
         }
         h2 {
             color: #002d72;
@@ -49,6 +51,10 @@
             position: relative;
             padding-bottom: 10px;
             border-bottom: 3px solid #aab6f2;
+        }
+        .form-label {
+            color: #002d72; /* Blue text for labels */
+            font-weight: bold;
         }
         .form-control {
             border-radius: 10px;
@@ -86,10 +92,20 @@
         .form-group {
             margin-bottom: 20px;
         }
-        @media (max-width: 767.98px) {
-            .contact-form-container {
-                padding: 20px;
-            }
+        .contact-form-container input,
+        .contact-form-container textarea {
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .contact-form-container input:focus,
+        .contact-form-container textarea:focus {
+            border-color: #aab6f2;
+            box-shadow: 0 0 0 0.2rem rgba(170, 182, 242, 0.25);
+        }
+        .btn-dark {
+            padding: 10px 20px;
+            font-size: 1rem;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -124,7 +140,7 @@
     <div class="contact-container">
         <div class="contact-form-container">
             <h2>Contact Us</h2>
-            <form action="/send_email" method="POST">
+            <form action="{{ url_for('send_email') }}" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
