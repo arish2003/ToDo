@@ -59,6 +59,19 @@ MyTodo is a task management web application designed to help users efficiently m
     python app.py
 ```
 7. Access the Application: Open your web browser and navigate to http://127.0.0.1:5000.
+
+## Live Demo 🌐
+
+The MyTodo application is live and ready for you to use! 🚀
+
+Explore the full functionality of the app in real-time. Whether you're adding tasks, searching through them, or sending a message via the contact form, everything is just a click away. Experience the user-friendly interface and the responsive design across all devices.
+
+👉 [Click here to try MyToDo now!](https://todo-arish.onrender.com/)
+
+We'd love to hear your feedback! If you encounter any issues or have suggestions for improvement, feel free to reach out.
+
+
+
 ## 🤝Contributing
 
 If you find this project helpful or have ideas for improvements, please consider:
