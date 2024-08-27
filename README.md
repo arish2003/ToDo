@@ -1,7 +1,7 @@
 
-# 📝MyTodo - Task Management Application
+# 📝MyToDo - Task Management Application
 
-MyTodo is a task management web application designed to help users efficiently manage their daily tasks. It features a sleek and intuitive interface for creating, editing, completing, and deleting tasks. Users can also search tasks and send contact messages.
+MyToDo is a task management web application designed to help users efficiently manage their daily tasks. It features a sleek and intuitive interface for creating, editing, completing, and deleting tasks. Users can also search tasks and send contact messages.
 
 
 ## ✨Features
